@@ -1,13 +1,25 @@
 ﻿Console.WriteLine("Calculator");
 
 Console.WriteLine("write first number: ");
-double num1 = Convert.ToDouble(Console.ReadLine());
+double num1;
+while (!double.TryParse(Console.ReadLine(), out num1))
+{
+    Console.WriteLine("Invalid input. Please enter a valid number.");
+}
 
 Console.WriteLine("write second number: ");
-double num2 = Convert.ToDouble(Console.ReadLine());
+double num2;
+while (!double.TryParse(Console.ReadLine(), out num2))
+{
+    Console.WriteLine("Invalid input. Please enter a valid number.");
+}
 
 Console.WriteLine("write operation: ");
-string op = Console.ReadLine();
+string op;
+while (string.IsNullOrEmpty(op = Console.ReadLine()))
+{
+    Console.WriteLine("Invalid input. Please enter a valid operation.");
+}
 
 double result = 0;
 
